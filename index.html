@@ -86,10 +86,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="显示Raycast-Target的一种方案"><a href="#显示Raycast-Target的一种方案" class="headerlink" title="显示Raycast Target的一种方案"></a>显示Raycast Target的一种方案</h1><p>这个方案的基础见雨松momo的文章<a href="http://www.xuanyusong.com/archives/4291，我这里只是给它做了一点改动，使得" target="_blank" rel="noopener">http://www.xuanyusong.com/archives/4291，我这里只是给它做了一点改动，使得</a></p>
-<p>```csharp<br>using UnityEditor;<br>using UnityEngine;<br>using UnityEngine.UI;</p>
-<p>public class HumblecastIndicator<br>{<br>  private static bool shown = true;<br>  static Vector3[] fourCorners = new Vector3[4];<br>  [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]<br>  static void DrawGizmos(MaskableGraphic graphic, GizmoType gizmoType)<br>  {<br>    if (!shown)<br>      return;<br>    if (graphic.raycastTarget)<br>    {<br>      RectTransform rectTransform = graphic.transform as RectTransform;<br>      rectTransform.GetWorldCorners(fourCorners);<br>      Gizmos.color = Color.blue;<br>      for (int i = 0; i &lt; 4; i++)<br>        Gizmos.DrawLine(fourCorners[i], fourCorners[(i + 1) % 4]);<br>    }<br>  }<br>}</p>
-
+        <p>这个方案的基础见雨松momo的文章<a href="http://www.xuanyusong.com/archives/4291" target="_blank" rel="noopener">http://www.xuanyusong.com/archives/4291</a></p>
+<p>我这里只是给它做了一点改动，使得</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEditor;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HumblecastIndicator</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">bool</span> shown = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">static</span> Vector3[] fourCorners = <span class="keyword">new</span> Vector3[<span class="number">4</span>];</span><br><span class="line">  [<span class="meta">DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)</span>]</span><br><span class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DrawGizmos</span>(<span class="params">MaskableGraphic graphic, GizmoType gizmoType</span>)</span></span><br><span class="line"><span class="function"></span>  &#123;</span><br><span class="line">    <span class="keyword">if</span> (!shown)</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (graphic.raycastTarget)</span><br><span class="line">    &#123;</span><br><span class="line">      RectTransform rectTransform = graphic.transform <span class="keyword">as</span> RectTransform;</span><br><span class="line">      rectTransform.GetWorldCorners(fourCorners);</span><br><span class="line">      Gizmos.color = Color.blue;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">        Gizmos.DrawLine(fourCorners[i], fourCorners[(i + <span class="number">1</span>) % <span class="number">4</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -125,7 +124,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="TextMesh-Pro和Text特性对比"><a href="#TextMesh-Pro和Text特性对比" class="headerlink" title="TextMesh Pro和Text特性对比"></a>TextMesh Pro和Text特性对比</h1><table>
+        <table>
 <thead>
 <tr>
 <th></th>
@@ -233,43 +232,6 @@
 
 
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/18/test/" class="article-date">
-  <time datetime="2020-07-17T20:28:11.000Z" itemprop="datePublished">2020-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/18/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>测试</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shpkng.github.io/2020/07/18/test/" data-id="ckcqocq0g0000zcv7dbk1go5o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/18/hello-world/" class="article-date">
@@ -355,10 +317,6 @@
         
           <li>
             <a href="/2020/07/18/TextMesh-Pro%E5%92%8CText%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/">TextMesh Pro和Text特性对比</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/18/test/">test</a>
           </li>
         
           <li>
