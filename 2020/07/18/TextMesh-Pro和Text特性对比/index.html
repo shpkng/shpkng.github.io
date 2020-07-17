@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>TextMesh Pro和Text特性对比 | shpkng.FF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TextMesh Pro和Text特性对比    Text TextMesh Pro 示例    字符集和纹理（多语言支持） 支持预先生成和动态生成，动态生成时可以自动Fallback到对应平台的常见字体（也就是说并不是自动调用系统当前字体？） 支持预先生成和动态生成，如果附有多个字体文件，可以Fallback，但是（似乎）并不会自动调用对应平台的字体 上：Text;下:TMP   字体资源 Dy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TextMesh Pro和Text特性对比">
+<meta property="og:url" content="https://shpkng.github.io/2020/07/18/TextMesh-Pro%E5%92%8CText%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/index.html">
+<meta property="og:site_name" content="shpkng.FF">
+<meta property="og:description" content="TextMesh Pro和Text特性对比    Text TextMesh Pro 示例    字符集和纹理（多语言支持） 支持预先生成和动态生成，动态生成时可以自动Fallback到对应平台的常见字体（也就是说并不是自动调用系统当前字体？） 支持预先生成和动态生成，如果附有多个字体文件，可以Fallback，但是（似乎）并不会自动调用对应平台的字体 上：Text;下:TMP   字体资源 Dy">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043200.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043408.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043432.png">
+<meta property="og:image" content="c:%5CUsers%5Cadmin%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200718043448181.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043532.png">
+<meta property="article:published_time" content="2020-07-17T20:29:09.000Z">
+<meta property="article:modified_time" content="2020-07-17T20:36:05.362Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043200.png">
+  
+    <link rel="alternate" href="/atom.xml" title="shpkng.FF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">shpkng.FF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shpkng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-TextMesh-Pro和Text特性对比" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/18/TextMesh-Pro%E5%92%8CText%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/" class="article-date">
+  <time datetime="2020-07-17T20:29:09.000Z" itemprop="datePublished">2020-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TextMesh Pro和Text特性对比
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TextMesh-Pro和Text特性对比"><a href="#TextMesh-Pro和Text特性对比" class="headerlink" title="TextMesh Pro和Text特性对比"></a>TextMesh Pro和Text特性对比</h1><table>
+<thead>
+<tr>
+<th></th>
+<th><a href="https://docs.unity3d.com/Manual/class-Font.html" target="_blank" rel="noopener">Text</a></th>
+<th>TextMesh Pro</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字符集和纹理（多语言支持）</td>
+<td>支持预先生成和动态生成，动态生成时可以自动Fallback到对应平台的常见字体（也就是说并不是自动调用系统当前字体？）</td>
+<td>支持预先生成和动态生成，如果附有多个字体文件，可以Fallback，但是（似乎）并不会自动调用对应平台的字体</td>
+<td><img src="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043200.png" alt="image-20200718043127817">上：Text;下:TMP</td>
+</tr>
+<tr>
+<td>字体资源</td>
+<td>Dynamic模式下不需要预先渲染纹理，通常需要将字体文件包含在安装包中（除非是目标平台必然包含的字体）；其他模式需要预先渲染，不需要将字体文件包含在安装包中</td>
+<td>基本相同</td>
+<td></td>
+</tr>
+<tr>
+<td>Scale缩放</td>
+<td>Bitmap字体，缩放影响渲染效果</td>
+<td>SDF渲染，无损缩放</td>
+<td><img src="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043408.png" alt="image-20200718043408490">上：Text，16px，2倍缩放;下：TMP，1px，32倍缩放</td>
+</tr>
+<tr>
+<td>字号</td>
+<td>单个字符的每个字号都需要渲染</td>
+<td>单个字符渲染一次</td>
+<td><img src="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043432.png" alt="image-20200718043432595">)通过富文本创建的不同字号字符<img src="C:%5CUsers%5Cadmin%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200718043448181.png" alt="image-20200718043448181">)Text渲染的纹理<img src="https://raw.githubusercontent.com/shpkng/mdPicBed/master/20200718043532.png" alt="image-20200718043532142">渲染的纹理</td>
+</tr>
+<tr>
+<td>字体排版</td>
+<td>简单朴素的排版功能</td>
+<td>丰富到繁琐的排版功能</td>
+<td></td>
+</tr>
+<tr>
+<td>Mesh效果</td>
+<td>使用UGUI的IMeshModifier接口</td>
+<td>Mesh构建方式特殊，不调用UGUI的IMeshModifier接口<a href="https://github.com/mob-sakai/MeshEffectForTextMeshPro" target="_blank" rel="noopener">第三方有实现用于TMP的Mesh效果</a></td>
+<td></td>
+</tr>
+<tr>
+<td>材质动画</td>
+<td>支持自定义材质</td>
+<td>支持自定义材质</td>
+<td></td>
+</tr>
+<tr>
+<td>富文本支持</td>
+<td>支持简单的富文本标签，可扩展</td>
+<td>支持丰富的富文本标签，可扩展</td>
+<td></td>
+</tr>
+<tr>
+<td>图文混排支持</td>
+<td>不支持混排</td>
+<td>支持混排，通过富文本标记添加</td>
+<td></td>
+</tr>
+<tr>
+<td>帧动画</td>
+<td></td>
+<td>支持帧动画，通过富文本标记添加</td>
+<td></td>
+</tr>
+<tr>
+<td>点击事件</td>
+<td>支持，通过附加脚本</td>
+<td>支持，通过富文本标记添加，精确到字</td>
+<td></td>
+</tr>
+<tr>
+<td>缺陷</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Dynamic的生成方式默认只支持一张纹理，如果纹理已满会导致新的字符显示异常，<a href="https://www.joven.top/archives/75" target="_blank" rel="noopener">需要自行修改代码修复这个问题</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>资源读取默认用Resources文件夹，<a href="https://answer.uwa4d.com/question/5cbda513e08a260abaf02136" target="_blank" rel="noopener">需要自行调整</a></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shpkng.github.io/2020/07/18/TextMesh-Pro%E5%92%8CText%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/" data-id="ckcqoesrq0000h4v7hfoohnxj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/18/%E6%98%BE%E7%A4%BARaycast-Target%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%A1%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          显示Raycast Target的一种方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/18/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">test</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/18/%E6%98%BE%E7%A4%BARaycast-Target%E7%9A%84%E4%B8%80%E7%A7%8D%E6%96%B9%E6%A1%88/">显示Raycast Target的一种方案</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/TextMesh-Pro%E5%92%8CText%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/">TextMesh Pro和Text特性对比</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
